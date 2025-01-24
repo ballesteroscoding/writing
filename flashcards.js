@@ -195,16 +195,16 @@ nextButton.addEventListener("click", nextCard);
 function readText() {
     if ('speechSynthesis' in window) {
         const msg = new SpeechSynthesisUtterance();
-        msg.lang = "en-";
+        msg.lang = "en-US";
         if (card.classList.contains("is-flipped")) {
-            msg.text = document.getElementById("incorrect-text").innerText;
-            window.speechSynthesis.speak(msg);
-        }
-        else {
-            msg.lang = "en-GB";
             msg.text = document.getElementById("correct-text").innerText;
             window.speechSynthesis.speak(msg);
         }
+        // else {
+        //     msg.lang = "en-GB";
+        //     msg.text = document.getElementById("correct-text").innerText;
+        //     window.speechSynthesis.speak(msg);
+        // }
     }
     else {
         alert("Sorry, your browser does not support text to speech!");
